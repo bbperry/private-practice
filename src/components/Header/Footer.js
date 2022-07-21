@@ -9,11 +9,8 @@ function Footer() {
             <div>
                 <h1>hello</h1>
             </div>
-            <div className='tagline'>wild, sustainable, fishermen direct</div>
+            <div className='tagline'>We are here to help you talk good.</div>
             <h6 className='phone'>360.393.6322</h6> 
-            <div className="admin-link-container">
-            <Link className="admin-link" to="/login">admin</Link>
-            </div>
         </div>
     </div>
   );

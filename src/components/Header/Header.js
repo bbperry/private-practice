@@ -4,39 +4,54 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import { LinkContainer } from 'react-router-bootstrap';
 
 function Header() {
-  
   return (
     <>
       <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">Claro Communication</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">About</Nav.Link>
-            <Nav.Link href="#link">Services & Rates</Nav.Link>
-            <Nav.Link href="#link">Payment & Insurance</Nav.Link>
-            <Nav.Link href="#link">Testimonials</Nav.Link>
-            <Nav.Link href="#link">Resources</Nav.Link>
-            <Nav.Link href="#link">Contact</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+        <Container>
+          <LinkContainer to="/">
+            <Navbar.Brand>Claro Communication</Navbar.Brand>
+          </LinkContainer>
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="navbar me-auto">
+              <LinkContainer to="/about">
+                <Nav.Link className="links">About</Nav.Link>
+              </LinkContainer>
+
+              <LinkContainer to="/services">
+                <Nav.Link className="links">Services</Nav.Link>
+              </LinkContainer>
+
+              {/* <LinkContainer to="/payment">
+                <Nav.Link>Payment & Insurance</Nav.Link>
+              </LinkContainer> */}
+
+              <NavDropdown title="Payment & Insurance" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Rates</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Insurance
+                </NavDropdown.Item>
+              </NavDropdown>
+
+              <LinkContainer to="/testimonials">
+                <Nav.Link>Testimonials</Nav.Link>
+              </LinkContainer>
+
+              <LinkContainer to="/resources">
+                <Nav.Link>Resources</Nav.Link>
+              </LinkContainer>
+
+              <LinkContainer to="/contact">
+                <Nav.Link>Contact</Nav.Link>
+              </LinkContainer>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </>
   );
 }
