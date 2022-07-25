@@ -9,7 +9,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 function Header() {
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar collapseOnSelect bg="light" expand="lg">
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>Claro Communication</Navbar.Brand>
@@ -30,11 +30,11 @@ function Header() {
                 <Nav.Link>Payment & Insurance</Nav.Link>
               </LinkContainer> */}
 
-              <NavDropdown title="Payment & Insurance" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Rates</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
+              <NavDropdown title="Payment & Insurance" id="collasible-nav-dropdown">
+              <LinkContainer to="/rates"><NavDropdown.Item href="#action/3.1">Rates</NavDropdown.Item></LinkContainer>
+              <LinkContainer to="/insurance"><NavDropdown.Item href="#action/3.2">
                   Insurance
-                </NavDropdown.Item>
+                </NavDropdown.Item></LinkContainer>
               </NavDropdown>
 
               <LinkContainer to="/testimonials">
